@@ -8,7 +8,9 @@
     config_file_src: ./files/nginx.conf
     config_file_dest: /etc/nginx/nginx.conf
     welcome_page: /usr/share/nginx/html/index.html
-    service_name: nginx
+    service_name: 
+      - nginx
+      - httpd
   tasks:
     - name: Create a group for the web server   #will show this message while play
       group:
