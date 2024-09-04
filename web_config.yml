@@ -2,7 +2,7 @@
 - name: Setup and configure a web server  #will show this message while play
   hosts: webservers
   become: yes  # This ensures that tasks are run with elevated privileges (e.g., sudo)
-  vars:
+  vars:                                 # can add it to seperate variable.yml as well
     web_user: webadmin
     web_group: webadmin
     config_file_src: ./files/nginx.conf
