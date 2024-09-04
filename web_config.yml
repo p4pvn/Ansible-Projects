@@ -1,5 +1,5 @@
 ---
-- name: Setup and configure a web server
+- name: Setup and configure a web server  #will show this message while play
   hosts: webservers
   become: yes  # This ensures that tasks are run with elevated privileges (e.g., sudo)
   vars:
@@ -10,7 +10,7 @@
     welcome_page: /usr/share/nginx/html/index.html
     service_name: nginx
   tasks:
-    - name: Create a group for the web server
+    - name: Create a group for the web server   #will show this message while play
       group:
         name: "{{ web_group }}"
         state: present
