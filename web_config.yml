@@ -67,9 +67,4 @@
   hosts: testservers
   become: yes
   tasks:
-    - name: Install necessary packages
-      yum:
-        name: nginx
-        state: present
-      notify:
-        - Restart nginx
+    - import_tasks: web_config.yml
