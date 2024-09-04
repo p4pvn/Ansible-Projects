@@ -68,9 +68,11 @@
   become: yes
   tasks:
     - import_tasks: web_config.yml
+    - import_tasks: start_servers.yml           #only for reference
 
 - name: setting up for dev server as well
   hosts: devservers
   become: yes
   tasks:
     - import_tasks: web_config.yml
+    - import_tasks: start_servers.yml         #only for reference
