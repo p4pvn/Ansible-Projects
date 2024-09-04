@@ -65,3 +65,14 @@
       service:
         name: nginx
         state: restarted
+
+- name: Setup and configure a test server as well
+  hosts: testservers
+  become: yes
+  tasks:
+    - name: Install necessary packages
+      yum:
+        name: nginx
+        state: present
+      notify:
+        - Restart nginx
