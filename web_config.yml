@@ -2,7 +2,6 @@
 - name: Setup and configure a web server
   hosts: webservers
   become: yes  # This ensures that tasks are run with elevated privileges (e.g., sudo)
-
   vars:
     web_user: webadmin
     web_group: webadmin
@@ -10,9 +9,7 @@
     config_file_dest: /etc/nginx/nginx.conf
     welcome_page: /usr/share/nginx/html/index.html
     service_name: nginx
-
   tasks:
-
     - name: Create a group for the web server
       group:
         name: "{{ web_group }}"
