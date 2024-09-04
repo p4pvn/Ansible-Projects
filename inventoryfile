@@ -1,0 +1,12 @@
+[webservers]
+192.168.0.1
+192.168.0.2
+hostname.domain.com
+
+[testservers]
+192.168.10.11
+192.168.10.12
+
+[devservers]
+192.168.23.209
+192.168.23.206
