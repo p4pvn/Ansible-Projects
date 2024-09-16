@@ -1,8 +1,9 @@
 [webservers]
-192.168.0.1
-192.168.0.2
+192.168.0.1    pkg=httpd     #declaring inventory specific variables
+192.168.0.2    pkg=nginx
 # you can declare domain/hostname as well.
-hostname.domain.com 
+hostname.domain.com pkg=apache
+
 
 
 [testservers]
