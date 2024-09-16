@@ -1,7 +1,9 @@
 [webservers]
 192.168.0.1
 192.168.0.2
-hostname.domain.com
+# you can declare domain/hostname as well.
+hostname.domain.com 
+
 
 [testservers]
 192.168.10.11
