@@ -98,4 +98,4 @@
       with_items:
         - /etc/passwd
         - /etc/group
-        - /etc/shadow
+        - /etc/shadow      #items and with_items are valid only within this module
