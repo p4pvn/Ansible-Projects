@@ -4,8 +4,6 @@
 # you can declare domain/hostname as well.
 hostname.domain.com pkg=apache
 
-
-
 [testservers]
 192.168.10.11
 192.168.10.12
