@@ -99,3 +99,27 @@
         - /etc/passwd
         - /etc/group
         - /etc/shadow      #items and with_items are valid only within this module
+
+#creating simple loop:
+- name: creating a simple loop
+  hosts: devservers
+  tasks:
+    - copy:
+        src: "{{ item[0] }}"
+        dest: "{{ item[1] }}"
+      with_nested:                # syntax for nested
+        - /etc/passwd             # ___________[0]
+        - /etc/group              #____________[1]
+    # OR #
+      with_nested:                                 # syntax for nested
+        - ['/etc/passwd','/etc/yum.d']             # ___________[0]
+        - ['/tmp','/mnt']                          #____________[1]
+    # OR #
+      with_nested:                                 # syntax for nested
+        - "{{ mydir }}"               # you can declare variable and recall it here
+        - "{{ myfile }}"                          
+
+
+
+
+
