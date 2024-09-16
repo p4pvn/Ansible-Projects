@@ -69,7 +69,7 @@
   hosts: testservers
   become: yes
   tasks:
-    - import_tasks: web_config.yml
+    - import_tasks: web_config.yml              # you can just list of tasks from other yml files
     - import_tasks: start_servers.yml           #only for reference
 
 - name: setting up for dev server as well
@@ -78,3 +78,13 @@
   tasks:
     - import_tasks: web_config.yml
     - import_tasks: start_servers.yml         #only for reference
+
+- name: Setting up for web server as well
+  vars_files:
+    - /path/to/variables.yml                # you can give path for variables
+  hosts: webservers
+  become: yes
+  tasks:
+    - import_tasks: web_config.yml
+    - import_tasks: start_servers.yml
+
