@@ -5,6 +5,8 @@
 hostname.domain.com pkg=apache
 
 [testservers]
+src = /tmp/
+dest = /etc/                 #declaring vars for inventory group
 192.168.10.11
 192.168.10.12
 
