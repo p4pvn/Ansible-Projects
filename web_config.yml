@@ -88,3 +88,14 @@
     - import_tasks: web_config.yml
     - import_tasks: start_servers.yml
 
+#creating simple loop:
+- name: creating a simple loop
+  hosts: devservers
+  tasks:
+    - copy:
+        src: "{{ item }}"
+        dest: /backup
+      with_items:
+        - /etc/passwd
+        - /etc/group
+        - /etc/shadow
