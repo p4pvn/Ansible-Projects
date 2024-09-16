@@ -119,6 +119,19 @@
         - "{{ mydir }}"               # you can declare variable and recall it here
         - "{{ myfile }}"                          
 
+# Creating and Implementing hash loop (it will create pairs in loop)
+
+- name: creating a HASH loop
+  hosts: devservers
+  tasks:
+    - user:
+        name: "{{ item.user }}"
+        state: present
+        group: "{{ item.group }}"
+      with_items:
+        - [user:'pawan' , group:'devops']
+        - [user:'sarah' , group:'dev']
+        - [user:'foo' , group: 'test']
 
 
 
